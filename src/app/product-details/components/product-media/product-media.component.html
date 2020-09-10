@@ -1,0 +1,9 @@
+  <ion-slides  (ionSlideDidChange)="onChangeSlide($event)" pager="true">
+
+    <ion-slide *ngFor="let medi of media">
+      <div class="slide">
+        <img [src]="medi"/>
+      </div>
+    </ion-slide>
+
+  </ion-slides>

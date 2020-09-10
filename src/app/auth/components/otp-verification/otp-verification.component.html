@@ -1,0 +1,35 @@
+<div class="login-container">
+  <ion-toolbar class="toolbar">
+    <ion-row>
+      <ion-col>
+        Mitrang
+      </ion-col>
+      <ion-col class="search-icon">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <section>
+    <div class="header">Verify OTP</div>
+    <div class="content">
+      <div>
+        <mat-form-field appearance="legacy" class="w-100">
+          <mat-label>Enter OTP</mat-label>
+          <input matInput [formControl]="otpFCtrl">
+          <mat-error *ngIf="otpFCtrl.hasError('required')">
+            OTP is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="action-container">
+        <div class="actions">
+          <ion-button class="login-btn" color="success" (click)="verify()">Verify</ion-button>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+

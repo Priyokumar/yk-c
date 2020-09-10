@@ -1,0 +1,19 @@
+<ion-toolbar class="toolbar">
+  <ion-row>
+    <ion-col>
+      Mitrang
+    </ion-col>
+    <ion-col class="search-icon">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-toolbar>
+
+<ion-searchbar animated></ion-searchbar>
+
+<ion-content
+  [scrollEvents]="true">
+    <div slot="fixed" class="content">
+      <app-home-categories></app-home-categories>
+    </div>
+</ion-content>

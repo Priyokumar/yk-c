@@ -1,0 +1,17 @@
+.content{
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 15px 15px;
+    color: rgb(65, 65, 65);
+    .input{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .delivery-time{
+        padding-top: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        
+    }
+}

@@ -1,0 +1,19 @@
+<ion-toolbar class="toolbar">
+  <ion-searchbar animated debounce="500" placeholder="Search"></ion-searchbar>
+</ion-toolbar>
+<ion-content [scrollEvents]="true">
+  <div slot="fixed" class="content">
+
+
+    <ion-list>
+      <ion-item>
+        <ion-icon name="arrow-back-outline" *ngIf="categoriesStack.length >= 2" (click)="onClickBack()"></ion-icon>
+      </ion-item>
+      <ion-item *ngFor="let category of categoriesToDisplay" (click)="onClickCategory(category)">
+        <ion-label>{{category.name}}</ion-label>
+        <ion-icon *ngIf="category.subCategories.length > 0" name="chevron-forward-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(12,162,135);
+    background: linear-gradient(180deg, rgba(12,162,135,1) 46%, rgba(0,232,255,0.8491771708683473) 100%);
+
+    div {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 15px;
+        color: #ffffff;
+        font-weight: 500;
+        font-style: italic;
+    }
+}

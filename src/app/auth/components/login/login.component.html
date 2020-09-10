@@ -1,0 +1,29 @@
+<div class="login-container">
+  <section>
+    <div class="header">Login</div>
+    <div class="content">
+      <div>
+        <mat-form-field appearance="legacy" class="w-100">
+          <mat-label>Mobile No.</mat-label>
+          <input matInput [formControl]="mobileNoFCtrl">
+          <mat-error *ngIf="mobileNoFCtrl.hasError('required')">
+            Mobile No. is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="action-container">
+        <div class="actions">
+          <ion-button class="login-btn" color="success" (click)="login()">Login</ion-button>
+        </div>
+        <div class="create-account" routerLink="/auth/registration" (click)="close()">Don't have an account?</div>
+      </div>
+      <br>
+      <div class="skip-container">
+        <button mat-button color="warn" (click)="skip()">Skip</button>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+

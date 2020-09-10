@@ -1,0 +1,10 @@
+<main>
+  <div class="title">Categories</div>
+  <div class="card-container">
+    <ion-card *ngFor="let category of categories" (click)="onClickCategory(category)">
+      <ion-card-content>
+        {{category.name}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</main>

@@ -1,0 +1,43 @@
+<div class="container">
+  <ion-toolbar class="toolbar">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="arrow-back-outline"></ion-icon>&nbsp;
+          <span>Mitrang</span>
+        </ion-col>
+        <ion-col class="search">
+          <ion-icon name="search-outline"></ion-icon>&nbsp;&nbsp;
+          <ion-icon name="cart-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+  <ion-content fullscreen>
+    <div app-product-media [media]="media" class="w-100"></div>
+    <div app-product-short-details [product]="product"></div>
+    <div class="content">
+      <div app-product-vendor-details></div>
+      <div app-product-check-shipping></div>
+      <div app-product-additional-info></div>
+    </div>
+  </ion-content>
+
+  <div class="bottom-actionbar">
+    <div class="wishlist ion-activatable ripple-parent">
+      <ion-icon name="heart-outline" class="wishlist"></ion-icon>&nbsp;
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+    <div class="spacer"></div>
+    <div class="add-to-bag ion-activatable ripple-parent">
+      <span>Add to bag</span>
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+
+    <div class="buy-now ion-activatable ripple-parent">
+      <span>Buy now</span>
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
+  </div>
+</div>

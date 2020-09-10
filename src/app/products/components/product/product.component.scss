@@ -1,0 +1,47 @@
+.item {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+
+    .details {
+        display: flex;
+        align-items: center;
+
+        .details-content {
+            padding-left: 10px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 20px;
+            color: #737373;
+
+            .name {
+                font-size: 13px;
+                font-weight: 400;
+                color: #000000;
+            }
+
+            .select-content {
+                display: flex;
+                align-items: center;
+            }
+
+            ion-select {
+                --padding-start: 0px;
+                --padding-top: 0px;
+                --padding-end: 0;
+                --padding-bottom: 0px;
+
+            }
+
+           
+        }
+       
+    }
+}
+
+.add-btn {
+    --border-radius: 15px;
+    --box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.13);
+}
