@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { CategoryService } from '../categories/services/category.service';
 import { HomeCategoriesComponent } from './components/home-categories/home-categories.component';
+import { MaterialModule } from '../material.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    IonicModule
+    IonicModule,
+    MaterialModule
   ],
   providers: [CategoryService]
 })

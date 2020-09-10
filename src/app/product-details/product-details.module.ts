@@ -9,6 +9,7 @@ import { ProductShortDetailsComponent } from './components/product-short-details
 import { ProductVendorDetailsComponent } from './components/product-vendor-details/product-vendor-details.component';
 import { ProductCheckShippingComponent } from './components/product-check-shipping/product-check-shipping.component';
 import { ProductAdditionalInfoComponent } from './components/product-additional-info/product-additional-info.component';
+import { MaterialModule } from '../material.module';
 
 const routes: Routes = [
   { path: '', component: ProductDetailsLayoutComponent }
@@ -26,7 +27,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    IonicModule
+    IonicModule,
+    MaterialModule
   ],
   providers: [ProductService]
 })

@@ -5,13 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { IonicModule } from '@ionic/angular';
 import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MaterialModule } from '../material.module';
 
 
 const routes: Routes = [
@@ -25,14 +20,9 @@ const routes: Routes = [
     CommonModule,
     IonicModule,
     RouterModule.forChild(routes),
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatBottomSheetModule,
+    MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
   ],
   declarations: [
     LoginComponent,

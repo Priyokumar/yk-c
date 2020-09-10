@@ -8,8 +8,9 @@ import { API } from 'src/app/constants/Api.constant';
 })
 export class AuthService {
 
-  skipAuth = "skipAuth";
-  userData = "userData";
+  skipAuth = 'skipAuth';
+  userData = 'userData';
+  redirectUrl = 'redirectUrl';
 
   constructor(
     private http: HttpClient
@@ -43,6 +44,21 @@ export class AuthService {
   getUserData(): IRegitration {
     const userData = localStorage.getItem(this.userData);
     return userData ? JSON.parse(userData) : null;
+  }
+
+  clearLoginData() {
+    localStorage.removeItem(this.userData);
+    localStorage.removeItem(this.skipAuth);
+    localStorage.removeItem(this.redirectUrl);
+  }
+
+  setRedirectUrl(url: string) {
+    localStorage.setItem(this.redirectUrl, url);
+  }
+
+  getRedirectUrl(): string {
+    const redirectUrl = localStorage.getItem(this.redirectUrl);
+    return redirectUrl;
   }
 
 }

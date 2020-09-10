@@ -4,7 +4,8 @@
       <ion-row>
         <ion-col>
           <ion-icon name="arrow-back-outline"></ion-icon>&nbsp;
-          <span>Mitrang</span>
+          <mat-icon>eco</mat-icon>
+          <span>Yening Keithel</span>
         </ion-col>
         <ion-col class="title">
           {{category?.name}}
@@ -22,14 +23,12 @@
 
   <ion-content fullscreen>
     <ion-list>
-        <div app-product [product]="product" *ngFor="let product of products"></div>
+      <div app-product [product]="product" *ngFor="let product of products"></div>
     </ion-list>
 
 
     <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-      <ion-infinite-scroll-content
-        loadingSpinner="crescent"
-        loadingText="Loading more data...">
+      <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Loading more data...">
       </ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </ion-content>

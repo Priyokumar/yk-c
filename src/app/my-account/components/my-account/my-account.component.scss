@@ -1,0 +1,86 @@
+.profile-container {
+    background-color: #00b386;
+    padding: 16px 20px;
+
+    .profile {
+        display: flex;
+        align-items: center;
+
+        .mat-icon {
+            font-size: 60px;
+            color: #ffffff;
+        }
+
+        .avatar {
+            width: 24%;
+        }
+
+        .details {
+            width: 76%;
+
+            .name {
+                font-size: 18px;
+                color: #ffffff;
+                margin-bottom: 3px;
+                letter-spacing: 1px;
+            }
+
+            .email {
+                font-size: 13px;
+                color: #ffffffb0;
+                margin-bottom: 1px;
+            }
+
+            .mobile {
+                font-size: 13px;
+                color: #ffffffb0;
+            }
+        }
+    }
+
+    .default-address {
+        display: flex;
+        justify-content: center;
+
+        .address {
+            padding: 11px;
+            font-size: 12px;
+            background-color: #05735752;
+            border-radius: 3px;
+            color: #ffffff;
+            margin-top: 19px;
+            display: flex;
+            align-items: center;
+
+            .mat-icon {
+                width: 12%;
+                font-size: 23px;
+            }
+
+            button {
+                border: 1px solid #ffffff;
+                font-size: 12px !important;
+                text-align: center;
+                background: transparent;
+                color: #ffffff;
+                padding: 4px 6px;
+                border-radius: 3px;
+            }
+        }
+    }
+
+
+
+}
+
+section {
+    margin: 10px 10px;
+    .item{
+        padding: 20px 10px;
+        display: flex;
+        align-items: center;
+        span{
+            padding-left: 10px;
+        }
+    }
+}

@@ -1,30 +1,21 @@
-<ion-tabs>
-
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="categories">
-      <ion-icon name="search-outline"></ion-icon>
-      <ion-label>Search</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="my-account">
-      <ion-icon name="reader-outline"></ion-icon>
-      <ion-label>Orders</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="my-bag">
-      <ion-icon name="cart-outline"></ion-icon>
-      <ion-label>Cart</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="my-bag">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>My Account</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-</ion-tabs>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+<div class="tabs-container">
+  <div class="tab" matRipple routerLink="/tabs/home" routerLinkActive="active">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </div>
+  <div class="tab" matRipple routerLink="/tabs/categories" routerLinkActive="active">
+    <mat-icon>search</mat-icon>
+    <span>Search</span>
+  </div>
+  <div class="tab" matRipple routerLink="/tabs/my-bag" routerLinkActive="active">
+    <mat-icon>shopping_cart</mat-icon>
+    <span>Cart</span>
+  </div>
+  <div class="tab" matRipple routerLink="/tabs/my-account" routerLinkActive="active">
+    <mat-icon>account_circle</mat-icon>
+    <span>My Account</span>
+  </div>
+</div>

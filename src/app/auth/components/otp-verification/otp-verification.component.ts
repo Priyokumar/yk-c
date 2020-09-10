@@ -41,13 +41,17 @@ export class OtpVerificationComponent implements OnInit {
 
     this.authService.verifyOtp(payload).subscribe(data => {
       this.verifyInProcess = false;
-      this.router.navigate([""]);
       this.authService.setUserData(data.data);
+      const redirectUrl = this.authService.getRedirectUrl();
+      if(redirectUrl){
+        this.router.navigate([redirectUrl]);
+      } else{
+        this.router.navigate(['']);
+      }
     }, error => {
       this.verifyInProcess = false;
       console.log(error);
       this.snackbar.open("Sorry, we are not able verify the otp! Try again.",'Ok');
-      this.router.navigate([""]);
     });
   }
 

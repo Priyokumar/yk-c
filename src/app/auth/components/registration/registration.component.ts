@@ -40,7 +40,13 @@ export class RegistrationComponent implements OnInit {
     this.authService.register(payload).subscribe(data => {
       this.router.navigate(["auth/otp-verification"], { queryParams: { mobileNo: payload.mobileNo } });
     }, error => {
-      this.snackbar.open("Sorry, we are not able create you account! Try again.",'Ok');
+
+      if(error.status === 409){
+        this.snackbar.open("Mobile number already registerd",'Ok');
+      } else{
+        this.snackbar.open("Sorry, we are not able create you account! Try again.",'Ok');
+      }
+      
     });
 
 

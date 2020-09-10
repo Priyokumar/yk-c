@@ -7,6 +7,7 @@ import { ProductService } from './services/product.service';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { CategoryService } from '../categories/services/category.service';
+import { MaterialModule } from '../material.module';
 
 const routes: Routes = [
   { path: '', component: ProductLayoutComponent }
@@ -23,7 +24,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    IonicModule
+    IonicModule,
+    MaterialModule
   ],
 
   providers: [ProductService, CategoryService]

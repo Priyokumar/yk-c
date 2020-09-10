@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SplashComponent } from './components/splash/splash.component';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { MaterialModule } from '../material.module';
 
 const routes: Routes = [
   { path: '', component: SplashComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialModule
   ],
   declarations: [
     SplashComponent

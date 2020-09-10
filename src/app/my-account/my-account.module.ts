@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MyAccountComponent } from './my-account.component';
 import { Routes, RouterModule } from '@angular/router';
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material.module';
 
 const routes: Routes = [
   {
@@ -14,7 +17,11 @@ const routes: Routes = [
   declarations: [MyAccountComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    IonicModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class MyAccountModule { }

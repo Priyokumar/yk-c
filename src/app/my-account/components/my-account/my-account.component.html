@@ -1,0 +1,58 @@
+<main>
+  <ion-toolbar class="toolbar">
+    <ion-row>
+      <ion-col>
+        <mat-icon>eco</mat-icon>
+        <span>Yening Keithel</span>
+      </ion-col>
+      <ion-col class="search-icon">
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+  <div class="profile-container" *ngIf="userData">
+    <div class="profile">
+      <div class="avatar">
+        <mat-icon>account_circle</mat-icon>
+      </div>
+      <div class="details">
+        <div class="name">{{userData.name}}</div>
+        <div class="email">{{userData.email}}</div>
+        <div class="mobile">{{userData.mobileNo}}</div>
+      </div>
+    </div>
+    <div class="default-address">
+      <div class="address">
+        <mat-icon>location_on</mat-icon>
+        <span>Leishangthem Awang Leikai, Thoubal, Manipur - 795138</span>
+        <button>Change</button>
+      </div>
+    </div>
+  </div>
+  <section *ngIf="userData">
+    <nav>
+
+      <div class="item" matRipple>
+        <mat-icon mat-list-icon>history</mat-icon>
+        <span>My Orders</span>
+      </div>
+
+      <div class="item" matRipple>
+        <mat-icon mat-list-icon>notifications_none</mat-icon>
+        <span>Notifications</span>
+      </div>
+
+      <div class="item" matRipple>
+        <mat-icon mat-list-icon>location_on</mat-icon>
+        <span>My Delivery Address</span>
+      </div>
+
+      <div class="item" matRipple (click)="logout()">
+        <mat-icon mat-list-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </div>
+
+    </nav>
+
+  </section>
+</main>
