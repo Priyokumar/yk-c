@@ -25,11 +25,27 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+.mat-toolbar{
+    background: #00b386;
+    color: #ffffff;  
+    .spacer {
+        flex: 1 1 auto;
+      }
+      .title{
+        font-size: 13px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .logo{
+        font-size: 21px;
+      }
+}
+
 .toolbar {
     --background: #00b386;
     --color: #ffffff;
     padding: 0 15px;
-
+    height: 65px;
     ion-col {
         font-size: 12px;
         font-weight: 600;
@@ -63,6 +79,19 @@
 
 .w-100 {
     width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+
+.w-40 {
+    width: 40%;
+}
+
+.w-60 {
+    width: 60%;
 }
 
 .h-100 {

@@ -1,0 +1,84 @@
+<main>
+  <mat-toolbar>
+    <button mat-icon-button (click)="back()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <mat-icon class="logo">eco</mat-icon>
+    <span class="title">Yening Keithel</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-toolbar>
+
+
+  <section>
+
+    <header>
+      <div>
+        {{id? 'Edit Address': 'Add Address'}}
+      </div>
+    </header>
+
+
+    <mat-form-field appearance="legacy" class="w-100">
+      <mat-label>Address line</mat-label>
+      <textarea matInput [formControl]="addressLineFctrl"></textarea>
+      <mat-error *ngIf="addressLineFctrl.hasError('required')">
+        Address line is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="w-100">
+      <mat-label>Mobile Number</mat-label>
+      <input matInput [formControl]="mobileNoFctrl">
+      <mat-error *ngIf="mobileNoFctrl.hasError('required')">
+        Mobile Number is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="w-100">
+      <mat-label>Landmark</mat-label>
+      <textarea matInput [formControl]="landmarkFctrl"></textarea>
+      <mat-error *ngIf="landmarkFctrl.hasError('required')">
+        Landmark is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="pin-state">
+      <mat-form-field appearance="legacy" class="pin">
+        <mat-label>Pin</mat-label>
+        <input matInput [formControl]="pinFctrl">
+        <mat-error *ngIf="pinFctrl.hasError('required')">
+          Pin is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="state">
+        <mat-label>District</mat-label>
+        <input matInput [formControl]="districtFctrl">
+        <mat-error *ngIf="districtFctrl.hasError('required')">
+          District is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+
+
+    <mat-form-field appearance="legacy" class="w-100">
+      <mat-label>State</mat-label>
+      <input matInput [formControl]="stateFctrl">
+      <mat-error *ngIf="stateFctrl.hasError('required')">
+        State is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-radio-group [formControl]="defaultAddressFctrl">
+      <mat-label>Default Address: </mat-label>
+      <mat-radio-button [value]="item.value" *ngFor="let item of yesNo">{{item.name}}&nbsp;&nbsp;</mat-radio-button>
+    </mat-radio-group>
+
+    <button mat-raised-button class="w-100" (click)="saveOrUpdate()">{{id? 'Update': 'save'}}</button>
+
+  </section>
+</main>

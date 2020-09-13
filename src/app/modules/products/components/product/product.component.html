@@ -1,0 +1,36 @@
+<div class="item">
+  <div class="details">
+    <img src="assets/veg.png" alt="" width="100" height="100">
+    <div class="details-content">
+      <div class="name">{{product.name}}</div>
+      <div class="selector">
+        <div class="select-content">
+          <span> 1 {{product.unit}}</span>
+
+          <button mat-button [matMenuTriggerFor]="kgMenu" *ngIf="product.customizable && product.unit === 'kg'">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <mat-menu #kgMenu="matMenu">
+            <button mat-menu-item *ngFor="let weight of product.weights">{{weight}}</button>
+          </mat-menu>
+
+          <button mat-button [matMenuTriggerFor]="pcsMenu" *ngIf="product.customizable && product.unit === 'pcs'">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+          <mat-menu #pcsMenu="matMenu">
+            <button mat-menu-item *ngFor="let pcs of product.pcs">{{pcs}}</button>
+          </mat-menu>
+
+        </div>
+        <div>{{product.price | currency:'INR'}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="action">
+
+    <ion-button class="add-btn" size="small" color="light" (click)="add()">
+      <ion-icon slot="start" name="add-outline"></ion-icon>
+      <span>Add</span>
+    </ion-button>
+  </div>
+</div>

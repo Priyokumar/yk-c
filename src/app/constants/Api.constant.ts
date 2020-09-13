@@ -11,4 +11,7 @@ export class API {
     public static VERIFY_OTP = API.BASE_URL + '/v1/api/auth/verify-otp';
     public static LOGIN = API.BASE_URL + '/v1/api/auth/login';
 
+    public static USERS = API.BASE_URL + '/v1/api/users';
+    public static ADDRESSES = API.BASE_URL + '/v1/api/addresses';
+
 }

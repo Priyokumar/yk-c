@@ -1,0 +1,41 @@
+<main>
+  <mat-toolbar>
+    <button mat-icon-button (click)="back()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <mat-icon class="logo">eco</mat-icon>
+    <span class="title">Yening Keithel</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-toolbar>
+</main>
+<section>
+  <header>
+    <div class="title">My Delivery Addresses</div>
+    <button mat-raised-button (click)="add()">Add</button>
+  </header>
+  <nav>
+    <div class="item mat-elevation-z1" *ngFor="let address of addresses$ | async">
+      <div class="details">
+        <div>{{address.addressLine ? address.addressLine+', ':''}}</div>
+        <div>{{address.landmark ? address.landmark + ', ': ''}}
+          {{address.district ? address.district + ', ': ''}}
+          {{address.state}} - {{address.pin}}</div>
+          <div>Mobile Number: {{address.mobileNo}}</div>
+      </div>
+      <div class="actions">
+        <mat-icon (click)="edit(address)">edit</mat-icon>
+        <mat-icon (click)="delete(address)">delete</mat-icon>
+      </div>
+      <div class="default-address">
+        <button
+          [ngClass]="{'default-address-btn':address.defaultAddress}" matRipple (click)="makeDefaultAddress(address)">
+          <span>{{address.defaultAddress ? 'Default Address': 'Make default address'}} </span> 
+          <mat-icon *ngIf="address.defaultAddress">check_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+  </nav>
+</section>

@@ -1,0 +1,15 @@
+.content {
+    width: 100%;
+}
+
+.container {
+    position: relative;
+}
+
+.product-list{
+    width: 100%;
+    padding: 20px;
+    .list-item{
+        margin-bottom: 10px;
+    }
+}

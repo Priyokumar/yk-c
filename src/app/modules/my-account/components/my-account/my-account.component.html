@@ -1,0 +1,61 @@
+<main>
+  <mat-toolbar>
+    <button mat-icon-button (click)="back()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <mat-icon class="logo">eco</mat-icon>
+    <span class="title">Yening Keithel</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="profile-container" *ngIf="userData$ | async as user">
+    <div class="profile">
+      <div class="avatar">
+        <mat-icon>account_circle</mat-icon>
+      </div>
+      <div class="details">
+        <div class="name">{{user.name}}</div>
+        <div class="email">{{user.email}}</div>
+        <div class="mobile">{{user.mobileNo}}</div>
+      </div>
+    </div>
+    <div class="default-address" *ngIf="defaultAddress$ | async as defaultAddress">
+      <div class="address">
+        <mat-icon>location_on</mat-icon>
+        <span>
+          {{defaultAddress.addressLine ? defaultAddress.addressLine+', ':''}}
+          {{defaultAddress.landmark ? defaultAddress.landmark + ', ': ''}}
+          {{defaultAddress.district ? defaultAddress.district + ', ': ''}}
+          {{defaultAddress.state}} - {{defaultAddress.pin}}</span>
+      </div>
+    </div>
+  </div>
+  <section *ngIf="userData$ | async">
+    <nav>
+
+      <div class="item" matRipple>
+        <mat-icon mat-list-icon>history</mat-icon>
+        <span>My Orders</span>
+      </div>
+
+      <div class="item" matRipple>
+        <mat-icon mat-list-icon>notifications_none</mat-icon>
+        <span>Notifications</span>
+      </div>
+
+      <div class="item" matRipple routerLink="/tabs/my-account/address">
+        <mat-icon mat-list-icon>location_on</mat-icon>
+        <span>My Delivery Address</span>
+      </div>
+
+      <div class="item" matRipple (click)="logout()">
+        <mat-icon mat-list-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </div>
+
+    </nav>
+
+  </section>
+</main>
